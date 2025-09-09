@@ -10,11 +10,11 @@ def suman(n):
     else:
         return n+suman(n-1)
 
-def potencia(m, n):
+def potencia(n,m):
     if m == 0:
-        return n
-    else:
-        return n*(n**potencia(m-1,n=0))
+        return 1
+    elif m > 0:
+        return n * potencia(n, m-1)
 
 while True:
     print("---- Menú ----")
@@ -57,7 +57,7 @@ while True:
             if base < 0 or exponente < 0:
                 print("No se admiten valores negativos")
             else:
-                print(f"{potencia(exponente, base)}")
+                print(f"{potencia(base, exponente)}")
         case "7":
             print("Saliendo del programa, gracias por su preferencia")
             break
